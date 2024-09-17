@@ -3,9 +3,12 @@ from datetime import datetime, timezone
 from typing import Optional
 import sqlalchemy as sa
 import sqlalchemy.orm as so
-from app import db, login
+from app import db, login, app
 from flask_login import UserMixin
 from hashlib import md5
+from time import time
+import jwt
+
 
 followers = sa.Table(
     'followers',
